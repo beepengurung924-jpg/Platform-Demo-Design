@@ -12,10 +12,11 @@ export function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
-          <a href="#showcase" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Residences</a>
-          <a href="#testimonials" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Reviews</a>
-          <a href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          <Link href="/listings">
+            <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Listings</a>
+          </Link>
+          <a href="/#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+          <a href="/#showcase" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Residences</a>
         </div>
 
         <div className="flex items-center gap-4">

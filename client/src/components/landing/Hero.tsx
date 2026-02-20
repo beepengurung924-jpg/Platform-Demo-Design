@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-apartment.png"; // Assuming generated image
 
@@ -38,9 +39,11 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/20 text-base px-8 h-12 rounded-full transition-all hover:-translate-y-1">
-              Explore Residences
-            </Button>
+            <Link href="/listings">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/20 text-base px-8 h-12 rounded-full transition-all hover:-translate-y-1">
+                Explore Residences
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="border-foreground/10 hover:bg-foreground/5 text-foreground h-12 px-8 rounded-full">
               Schedule a Tour
             </Button>
