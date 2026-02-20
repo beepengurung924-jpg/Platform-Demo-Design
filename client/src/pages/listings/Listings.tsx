@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -114,65 +115,67 @@ export default function Listings() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <Card className="group overflow-hidden border-border/40 hover:shadow-xl transition-all duration-500 cursor-pointer">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute top-3 left-3 flex gap-2">
-                      <Badge className="bg-white/90 text-foreground backdrop-blur-sm border-none">
-                        {item.tag}
-                      </Badge>
-                    </div>
-                    <div className="absolute top-3 right-3">
-                      <div className="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2 py-1 rounded-lg text-white text-xs font-bold">
-                        <Star className="w-3 h-3 fill-primary text-primary" />
-                        {item.rating}
+                <Link href={`/listings/${item.id}`}>
+                  <Card className="group overflow-hidden border-border/40 hover:shadow-xl transition-all duration-500 cursor-pointer">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute top-3 left-3 flex gap-2">
+                        <Badge className="bg-white/90 text-foreground backdrop-blur-sm border-none">
+                          {item.tag}
+                        </Badge>
                       </div>
-                    </div>
-                  </div>
-
-                  <CardContent className="p-5">
-                    <div className="mb-4">
-                      <h3 className="text-lg font-bold font-serif text-foreground group-hover:text-primary transition-colors mb-1">
-                        {item.title}
-                      </h3>
-                      <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                        <MapPin className="w-3 h-3" />
-                        {item.location}
+                      <div className="absolute top-3 right-3">
+                        <div className="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2 py-1 rounded-lg text-white text-xs font-bold">
+                          <Star className="w-3 h-3 fill-primary text-primary" />
+                          {item.rating}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between mb-4 pb-4 border-b border-border/40">
-                      <div className="flex flex-col">
-                        <span className="text-2xl font-bold text-foreground">${item.price}</span>
-                        <span className="text-xs text-muted-foreground">per month</span>
+                    <CardContent className="p-5">
+                      <div className="mb-4">
+                        <h3 className="text-lg font-bold font-serif text-foreground group-hover:text-primary transition-colors mb-1">
+                          {item.title}
+                        </h3>
+                        <div className="flex items-center gap-1 text-muted-foreground text-sm">
+                          <MapPin className="w-3 h-3" />
+                          {item.location}
+                        </div>
                       </div>
-                      <div className="flex gap-2">
-                        {item.amenities.includes("Wifi") && <Wifi className="w-4 h-4 text-muted-foreground/60" />}
-                        {item.amenities.includes("Parking") && <Car className="w-4 h-4 text-muted-foreground/60" />}
-                        {item.amenities.includes("Pool") && <Waves className="w-4 h-4 text-muted-foreground/60" />}
-                      </div>
-                    </div>
 
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Bed className="w-4 h-4" />
-                        <span>{item.beds} BR</span>
+                      <div className="flex items-center justify-between mb-4 pb-4 border-b border-border/40">
+                        <div className="flex flex-col">
+                          <span className="text-2xl font-bold text-foreground">${item.price}</span>
+                          <span className="text-xs text-muted-foreground">per month</span>
+                        </div>
+                        <div className="flex gap-2">
+                          {item.amenities.includes("Wifi") && <Wifi className="w-4 h-4 text-muted-foreground/60" />}
+                          {item.amenities.includes("Parking") && <Car className="w-4 h-4 text-muted-foreground/60" />}
+                          {item.amenities.includes("Pool") && <Waves className="w-4 h-4 text-muted-foreground/60" />}
+                        </div>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Bath className="w-4 h-4" />
-                        <span>{item.baths} BA</span>
+
+                      <div className="flex items-center justify-between text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1">
+                          <Bed className="w-4 h-4" />
+                          <span>{item.beds} BR</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Bath className="w-4 h-4" />
+                          <span>{item.baths} BA</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Move className="w-4 h-4" />
+                          <span>{item.sqft} sqft</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Move className="w-4 h-4" />
-                        <span>{item.sqft} sqft</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
