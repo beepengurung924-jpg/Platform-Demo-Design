@@ -3,6 +3,8 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 
+
+// This file is the main entry point for the server. It sets up the Express app, registers routes, and starts the server.
 const app = express();
 const httpServer = createServer(app);
 
