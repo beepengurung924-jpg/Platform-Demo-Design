@@ -10,17 +10,32 @@ export function Navbar() {
             Luxe<span className="text-primary">Stay</span>
           </a>
         </Link>
-        
+
         <div className="hidden md:flex items-center gap-8">
           <Link href="/listings">
-            <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Listings</a>
+            <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Listings
+            </a>
           </Link>
-          <a href="/#features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
-          <a href="/#showcase" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Residences</a>
+          <a
+            href="/#features"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Features
+          </a>
+          <a
+            href="/#showcase"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Residences
+          </a>
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-sm font-medium hidden sm:inline-flex">
+          <Button
+            variant="ghost"
+            className="text-sm font-medium hidden sm:inline-flex"
+          >
             Log In
           </Button>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95">
